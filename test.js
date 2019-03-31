@@ -1,13 +1,12 @@
+stringExpansion('ss777D4ad22f');
+
 function stringExpansion(s) {
-    let memor = 1;
-    let newS = "";
-    for (let i = 0; i <s.length; i++){
-        if(s[i] == +s[i]){
-            memor = +s[i];
-            console.log(memor);
-        }else{
-            newS += s[i].repeat(memor);
-        }
+    let memory = 1;
+    let res = '';
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] == +s[i]) {
+            memory = +s[i];
+        } else res += s[i].repeat(memory);
     }
-    return newS;
+    console.log(res);
 }
