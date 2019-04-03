@@ -1,13 +1,5 @@
-console.log(fakeBin(12893));
+console.log(fakeBin(128938));
 
 function fakeBin(x){
-    res = '';
-    for (let i = 0; i < String(x).length; i++){
-    if (String(x)[i] < 5){
-        res += 0;
-    } else {
-        res += 1;
-    }
-}
-    return res;
+    return String(x).split('').map(item => (item < 5)? 0: 1).join('');
 }
