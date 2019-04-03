@@ -1,16 +1,11 @@
 console.log(rgb(7, 25, 255));
 
 function rgb(r, g, b){
-    let arr = [];
-    arr.push(r, g, b);
-    for (let i = 0; i < arr.length; i++){
-        if (arr[i] > 255){
-            arr[i] = (255).toString(16).toUpperCase();
-        } else if (arr[i] <= 0){
-            arr[i] = '00';
-        } else if(arr[i] < 16) {
-            arr[i] = '0' + arr[i].toString(16).toUpperCase();
-        } else arr[i] = arr[i].toString(16).toUpperCase();
-        }
-    return arr.join('');
+    function toHex(x){
+        if (x >= 255) return 'FF';
+        else if (x <= 0) return '00';
+        else if (x < 16) return '0' + x.toString(16).toUpperCase();
+        return x.toString(16).toUpperCase();
+    }
+    return toHex(r) + toHex(g) + toHex(b);
 }
